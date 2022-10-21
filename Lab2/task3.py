@@ -1,12 +1,11 @@
 import math
 import os
-from chardet.universaldetector import UniversalDetector
+
 
 def task3():
     count = [0] * 256
     for filename in os.listdir("../different_encodings/"):
         with open(os.path.join("../different_encodings/", filename), 'rb') as f:
-            #with open(filename, 'rb') as f:
             byte = f.read(1)
             while byte != b'':
                 count[int.from_bytes(byte, byteorder="big")] += 1
@@ -62,7 +61,6 @@ def encoding_specifier(filename):
             print("%6r %7d" % tuple(symbol))
         print("-------------------------------------------------------\n")
     
-
 
 def main():
     #task3()
