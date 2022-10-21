@@ -19,13 +19,20 @@ def task1(filename):
     for i in range(len(table)):
         I += table[i][1] * table[i][3]
     print('Amount of information: ' + str(I))
-    print('Sorted by alphabet:')
+    print("-------------------------------------------------")
+    print("Характеристика символов с сортировкой по алфавиту")
+    print("-------------------------------------------------")
+    print('Символ\u2193\tКол-во\tВероятность\tКол-во информации')
     for i in table:
-        print(i)
-    table.sort(key = lambda x: x[1], reverse=True)
-    print('Sorted by quantity:')
+        print("%s\t%d\t%.2f\t\t%.2f" % (repr(i[0]), i[1], i[2], i[3]))
+    print("-------------------------------------------------\n")
+    table.sort(key=lambda x: x[1], reverse=True)
+    print("---------------------------------------------------")
+    print("Характеристика символов с сортировкой по количеству")
+    print("---------------------------------------------------")
+    print('Символ\tКол-во\u2193\tВероятность\tКол-во информации')
     for i in table:
-        print(i)
+        print("%s\t%d\t%.2f\t\t%.2f" % (repr(i[0]), i[1], i[2], i[3]))
 
 
 if __name__ == '__main__':
