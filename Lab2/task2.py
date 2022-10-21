@@ -26,14 +26,14 @@ def read_unicode_file():
             print("-------------------------------------------------")
             print('Символ\u2193 Кол-во Вероятность Кол-во информации')
             for key, value in dict(sorted(file_symbols.items())).items():
-                print("%7s %6d %11.2f %17.2f" % (repr(key), value[0], value[1], value[2])) 
+                print("%7r %6d %11.2f %17.2f" % (key, value[0], value[1], value[2])) 
             print("-------------------------------------------------\n")
             print("---------------------------------------------------")
             print("Характеристика символов с сортировкой по количеству")
             print("---------------------------------------------------")
             print('Символ Кол-во\u2193 Вероятность Кол-во информации')
             for key, value in dict(sorted(file_symbols.items(), key= lambda item: item[1][0], reverse=True)).items():
-                print("%6s %7d %11.2f %17.2f" % (repr(key), value[0], value[1], value[2]))
+                print("%6r %7d %11.2f %17.2f" % (key, value[0], value[1], value[2]))
             print("---------------------------------------------------")
     except UnicodeDecodeError:
         print("Невозможно считать файл в данном формате!")
