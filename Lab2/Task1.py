@@ -1,6 +1,7 @@
 import math
 from tabulate import tabulate
 
+
 def task1(filename):
     count = [0] * 256
     with open(filename, 'rb') as f:
@@ -15,7 +16,7 @@ def task1(filename):
     table = []
     for i in range(256):
         if count[i] != 0:
-            table.append([repr(chr(i)), count[i], count[i] / sum, -math.log(count[i] / sum, 2)])
+            table.append([repr(i.to_bytes(1, byteorder="big").decode('koi8-r')), count[i], count[i] / sum, -math.log(count[i] / sum, 2)])
     I = 0
     for i in range(len(table)):
         I += table[i][1] * table[i][3]
@@ -33,4 +34,4 @@ def task1(filename):
 
 
 if __name__ == '__main__':
-    task1('task1.txt')
+    task1('4.txt')
