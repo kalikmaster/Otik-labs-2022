@@ -1,5 +1,6 @@
 import math
 
+
 def task1(filename):
     count = [0] * 256
     with open(filename, 'rb') as f:
@@ -36,4 +37,4 @@ def task1(filename):
     print("-------------------------------------------------------")
 
 if __name__ == '__main__':
-    task1('task1.txt')
+    task1('4.txt')
